@@ -26,7 +26,7 @@ const NavigationListener = () => {
                     navigate('/login');  
                 }
             } else {
-                console.log('Percorso non definito, reindirizzo alla landing.');
+                console.log('Percorso non definito, reindirizzo alla landing.', path);
                 dispatch(goToPath('/'));
                 navigate('/'); 
             }

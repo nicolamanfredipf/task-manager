@@ -1,11 +1,17 @@
-@import '/src/styles/variables.scss';
+@use '/src/styles/variables.scss'as vars;
+@use '/src/styles/utils.scss'as utils;
 
 html,
 body {
-    background-color: $bg-color;
-    color: $text-secondary;
-    margin: 0;
-    padding: 0;
+    @include utils.no-space;
+    @include utils.font-14;
+    background-color: vars.$bg-color;
+    color: vars.$text-secondary;
+    font-family: vars.$main-font;
+}
+
+main{
+    padding: vars.$m-padding;
 }
 
 h1,
@@ -14,5 +20,103 @@ h3,
 h4,
 h5,
 h6 {
-    color: $text-primary;
+    color: vars.$text-primary;
+    font-family: vars.$title-font;
+    font-weight: 800;
+}
+
+h1 {
+    @include utils.font-24;
+}
+
+h2 {
+    @include utils.font-20;
+}
+
+button,
+a {
+    @include utils.font-14;
+    font-family: vars.$main-font;
+    font-weight: 600;
+    border: none;
+    color: vars.$text-primary;
+    text-decoration: none;
+}
+
+ul {
+    @include utils.no-space;
+    list-style: none;
+}
+
+
+// Tablet 768px
+@media (min-width: vars.$tablet) {
+
+    html,
+    body {
+        @include utils.font-16;
+    }
+    main{
+        padding: vars.$t-padding;
+    }
+    h1 {
+        @include utils.font-32;
+    }
+
+    h2 {
+        @include utils.font-26;
+    }
+
+    button,
+    a {
+        @include utils.font-16;
+    }
+}
+
+// Large-Tablet 1024px
+@media (min-width: vars.$large-tablet) {
+
+    html,
+    body {
+        @include utils.font-18;
+    }
+    main{
+        padding: vars.$tl-padding;
+    }
+    h1 {
+        @include utils.font-36;
+    }
+
+    h2 {
+        @include utils.font-30;
+    }
+
+    button,
+    a {
+        @include utils.font-16;
+    }
+}
+
+// Desktop 1280px
+@media (min-width: vars.$desktop) {
+
+    html,
+    body {
+        @include utils.font-18;
+    }
+    main{
+        padding: vars.$d-padding;
+    }
+    h1 {
+        @include utils.font-40;
+    }
+
+    h2 {
+        @include utils.font-34;
+    }
+
+    button,
+    a {
+        @include utils.font-16;
+    }
 }

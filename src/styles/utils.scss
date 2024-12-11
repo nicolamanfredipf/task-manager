@@ -1,0 +1,84 @@
+@use 'variables.scss'as vars;
+
+// SIZING
+@mixin no-space {
+    padding: 0;
+    margin: 0;
+}
+
+@mixin background-radial($background-1: vars.$bg-color, $background-2: vars.$bg-color) {
+    background: radial-gradient(circle, $background-1 50%, $background-2 100%);
+
+}
+
+// EFFECTS
+@mixin glass-effect($blur:10px, $saturate:100%, $shadow-color: vars.$bg-color) {
+    box-shadow: 0 0 10px 0 $shadow-color;
+    -webkit-backdrop-filter: blur($blur);
+    backdrop-filter: blur($blur);
+    border: 0.5px solid line $shadow-color;
+}
+
+// FONTS
+
+@mixin font-40 {
+    font-size: 40px;
+}
+
+@mixin font-36 {
+    font-size: 36px;
+}
+
+@mixin font-34 {
+    font-size: 34px;
+}
+
+@mixin font-32 {
+    font-size: 32px;
+}
+
+@mixin font-30 {
+    font-size: 30px;
+}
+
+@mixin font-26 {
+    font-size: 26px;
+}
+
+@mixin font-24 {
+    font-size: 24px;
+}
+
+@mixin font-20 {
+    font-size: 24px;
+}
+
+@mixin font-18 {
+    font-size: 18px;
+}
+
+@mixin font-16 {
+    font-size: 16px;
+}
+
+@mixin font-14 {
+    font-size: 14px;
+}
+
+//  DISPLAY
+@mixin flex($gap: 0px) {
+    display: flex;
+    gap: $gap;
+}
+
+@mixin align-justify($align: center, $justify: center) {
+    align-items: $align;
+    justify-content: $justify;
+}
+
+
+// 
+// @media (min-width: vars.$mobile) {}
+// @media (min-width: vars.$tablet) {}
+// @media (min-width: vars.$large-tablet) {}
+// @media (min-width: vars.$desktop) {}
