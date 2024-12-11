@@ -1,20 +1,19 @@
 import { createSlice } from '@reduxjs/toolkit';
 
+const initialState = { path: '/' };
 
-const initialState = { path: '' };
-
-const navigationSlice = createSlice({
+const NavigationSlice = createSlice({
     name: 'navigation',
     initialState,
     reducers: {
         goToHome(state) {
-            state.path = '';
+            state.path = '/';
         },
-        navigate(state, action) {
+        goToPath(state, action) {
             state.path = action.payload;
         },
     },
 })
 
-export const { goToHome, navigate } = navigationSlice.actions
-export default navigationSlice.reducer
+export const { goToHome, goToPath } = NavigationSlice.actions
+export default NavigationSlice.reducer

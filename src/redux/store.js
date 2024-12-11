@@ -1,6 +1,6 @@
 import { configureStore } from '@reduxjs/toolkit';
-import navigationReducer from './slicers/navigationSlice';
-import authReducer from './slicers/authSlice';
+import navigationReducer from './slicers/NavigationSlice';
+import authReducer from './slicers/AuthSlice';
 
 const store = configureStore({
     reducer: {
